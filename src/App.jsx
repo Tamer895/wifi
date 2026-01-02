@@ -18,8 +18,8 @@ function App() {
         <Hero />
         <Brands />
         <Types />
-        <Advantages />
         <Plans />
+        <Advantages />
       </main>
     </>
   )
