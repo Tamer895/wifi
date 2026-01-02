@@ -63,7 +63,7 @@ const AdvantageCard = ({ title, description }) => {
 
 export default function Advantages() {
   return (
-    <section className="w-full mx-auto py-12 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8">
+    <section className="w-9/10 md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto py-12 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8">
       <div className="w-full max-w-6xl mx-auto">
         
         {/* Header */}
