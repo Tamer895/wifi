@@ -120,7 +120,7 @@ export default function Plans() {
                   key={plan.id}
                   onClick={() => setSelectedPlan(plan)}
                   className={`
-                    flex flex-col items-center justify-center p-4 md:p-6 rounded-xl
+                    flex flex-col items-center justify-center p-4 md:p-6 rounded-lg
                     transition-all duration-300 cursor-pointer
                     ${selectedPlan.id === plan.id
                       ? "border-1 border-[#6153fc] bg-blue-50"
