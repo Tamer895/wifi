@@ -20,7 +20,7 @@ export default function Brands() {
   const sliderSettings = {
     infinite: true,
     speed: 2000,
-    slidesToShow: 2, // сколько логотипов видно одновременно
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1500,
@@ -29,7 +29,7 @@ export default function Brands() {
     pauseOnHover: false,
     responsive: [
       {
-        breakpoint: 640, // sm и выше показываем обычный ряд, не слайдер
+        breakpoint: 641,
         settings: "unslick"
       }
     ]
@@ -52,27 +52,29 @@ export default function Brands() {
         </h1>
 
         <div className="w-full lg:pt-5 mt-6">
-          {/* Слайдер на телефонах */}
-          <Slider {...sliderSettings}>
-            {images.map((image, index) => (
-              <div key={index} className="lg:hidden! flex justify-center px-4">
-                <img 
-                  className="h-10 sm:h-12 md:h-14 lg:h-12 object-contain"
-                  src={image.src} 
-                  alt={image.alt} 
-                />
-              </div>
-            ))}
-          </Slider>
+          {/* Слайдер на мобильных телефонах */}
+          <div className="sm:hidden">
+            <Slider {...sliderSettings}>
+              {images.map((image, index) => (
+                <div key={index} className="flex justify-center px-2 py-4">
+                  <img
+                    className="h-10 object-contain"
+                    src={image.src}
+                    alt={image.alt}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
 
           {/* Для sm и выше показываем обычный ряд */}
-          <div className="hidden sm:flex flex-row items-center justify-center gap-6 sm:gap-8">
+          <div className="hidden sm:flex flex-row items-center justify-center gap-6 sm:gap-8 flex-wrap">
             {images.map((image, index) => (
-              <img 
+              <img
                 className="h-10 sm:h-12 md:h-14 lg:h-12 lg:mx-3 object-contain"
-                key={index} 
-                src={image.src} 
-                alt={image.alt} 
+                key={index}
+                src={image.src}
+                alt={image.alt}
               />
             ))}
           </div>
