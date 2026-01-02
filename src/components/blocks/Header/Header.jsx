@@ -41,26 +41,26 @@ export default function Header() {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className="fixed top-0 left-0 w-full bg-white shadow-md z-50"
     >
-      <div className="w-full px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex items-center justify-between py-3 md:py-4">
-        <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl text-[#6153fc] font-bold whitespace-nowrap">
+      <div className="w-[90%] max-w-[1200px] mx-auto flex items-center justify-between py-4">
+        <h1 className="text-3xl sm:text-4xl text-[#6153fc] font-bold">
           WiFi<span className="text-[#ff5541]">INK</span>.
         </h1>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center font-semibold gap-1 lg:gap-3">
+        <nav className="hidden md:flex items-center font-semibold">
           {links.map((link, index) => (
             <a
               key={index}
               href={link.href}
-              className="text-[#5c596f] hover:text-[#6153fc] duration-200 text-sm lg:text-base px-2 lg:px-3"
+              className="text-[#5c596f] hover:text-[#6153fc] duration-200 mx-3"
             >
               {link.title}
             </a>
           ))}
-          <div className="h-6 flex items-center border-l border-l-gray-300 pl-3 lg:pl-4 ml-2 lg:ml-4">
+          <div className="h-6 flex items-center border-l border-l-gray-300 pl-4 ml-4">
             <a
               href={`tel:${config.tel}`}
-              className="text-[#5c596f] font-bold text-sm lg:text-base mr-2 lg:mr-4"
+              className="text-[#5c596f] font-bold text-lg mr-4"
             >
               {config.phone}
             </a>
@@ -72,9 +72,9 @@ export default function Header() {
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-[#6153fc] flex-shrink-0"
+            className="text-[#6153fc]"
           >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
