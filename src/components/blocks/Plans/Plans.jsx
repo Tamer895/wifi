@@ -99,7 +99,7 @@ export default function Plans() {
 
   return (
     <section className="w-full md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto py-20 md:py-32 lg:py-40">
-      <div className="w-full px-4 md:px-6 lg:px-8 max-w-[1200px] mx-auto">
+      <div className="w-full max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="mb-8 md:mb-12 lg:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#2d3748] mb-4">
