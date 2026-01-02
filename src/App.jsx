@@ -2,6 +2,7 @@ import Hero from "./components/blocks/Hero/Hero"
 import Header from "./components/blocks/Header/Header"
 import Brands from "./components/blocks/Brands/Brands"
 import Types from "./components/blocks/Types/Types";
+import Advantages from "./components/blocks/Advantages/Advantages";
 import Plans from "./components/blocks/Plans/Plans";
 
 // в App.jsx или index.js
@@ -17,6 +18,7 @@ function App() {
         <Hero />
         <Brands />
         <Types />
+        <Advantages />
         <Plans />
       </main>
     </>
