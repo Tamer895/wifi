@@ -98,7 +98,7 @@ export default function Plans() {
   const [selectedPlan, setSelectedPlan] = useState(plans[0]);
 
   return (
-    <section className="w-9/10 md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto py-20 md:py-32 lg:py-40">
+    <section className="w-9/10 md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto py-20">
       <div className="w-full max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="mb-8 md:mb-12 lg:mb-16">
