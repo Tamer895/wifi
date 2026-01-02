@@ -56,7 +56,7 @@ export default function Brands() {
           <div className="sm:hidden">
             <Slider {...sliderSettings}>
               {images.map((image, index) => (
-                <div key={index} className="flex justify-center px-2">
+                <div key={index} className="flex justify-center px-2 py-2">
                   <img
                     className="h-10 object-contain"
                     src={image.src}
