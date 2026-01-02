@@ -146,7 +146,7 @@ export default function Plans() {
 
           {/* Details Section */}
           <div className="lg:col-span-1 lg:row-span-1">
-            <div className="bg-white rounded-xl p-4 md:p-6 lg:p-8 border-2 border-[#6153fc]" style={{ boxShadow: "0 5px 20px rgba(0,0,0,0.1)" }}>
+            <div className="bg-white rounded-xl p-4 md:p-6 lg:p-8" style={{ boxShadow: "0 5px 20px rgba(0,0,0,0.1)" }}>
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-[#2d3748] mb-3">
                 {selectedPlan.title}
               </h3>
