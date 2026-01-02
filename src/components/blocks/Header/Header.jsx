@@ -85,22 +85,21 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-full left-0 w-full bg-white shadow-md md:hidden flex flex-col items-center px-4 py-4 sm:py-6 z-50"
+            className="absolute top-full left-0 w-full bg-white shadow-md md:hidden flex flex-col items-center py-6 z-50"
           >
             {links.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-[#5c596f] hover:text-[#6153fc] duration-200 py-2 text-sm sm:text-base w-full text-center"
+                className="text-[#5c596f] hover:text-[#6153fc] duration-200 py-2 text-lg"
               >
                 {link.title}
               </a>
             ))}
-            <div className="border-t border-gray-200 w-full my-3 sm:my-4"></div>
             <a
               href={`tel:${config.tel}`}
-              className="text-[#5c596f] font-bold text-sm sm:text-base mb-3 sm:mb-4"
+              className="text-[#5c596f] font-bold text-lg mt-2 mb-4"
             >
               {config.phone}
             </a>
