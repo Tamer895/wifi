@@ -20,7 +20,7 @@ export default function Brands() {
   const sliderSettings = {
     infinite: true,
     speed: 2000,
-    slidesToShow: 2, // сколько логотипов видно одновременно
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1500,
@@ -29,7 +29,7 @@ export default function Brands() {
     pauseOnHover: false,
     responsive: [
       {
-        breakpoint: 640, // sm и выше показываем обычный ряд, не слайдер
+        breakpoint: 641,
         settings: "unslick"
       }
     ]
