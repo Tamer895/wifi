@@ -123,8 +123,8 @@ export default function Plans() {
                     flex flex-col items-center justify-center p-4 md:p-6 rounded-xl
                     transition-all duration-300 cursor-pointer
                     ${selectedPlan.id === plan.id
-                      ? "border-2 border-[#6153fc] bg-blue-50"
-                      : "border-2 border-[#e5e5e5] bg-white hover:border-[#6153fc]"
+                      ? "border-1 border-[#6153fc] bg-blue-50"
+                      : "border-1 border-[#e5e5e5] bg-white hover:border-[#6153fc]"
                     }
                   `}
                 >
