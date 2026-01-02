@@ -1,14 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../ui/Buttons/Button";
+import megaphone from "../../../assets/images/plans/megaphone.png";
+import beeline from "../../../assets/images/plans/beeline.png";
+import mts from "../../../assets/images/plans/mts.png";
+import tele2 from "../../../assets/images/plans/tele2.png";
+import wifire from "../../../assets/images/plans/wifire.png";
+import ros from "../../../assets/images/plans/ros.png";
 
 export default function Plans() {
+  const [config, setConfig] = useState(null);
+
+  useEffect(() => {
+    fetch("/data/config.json")
+      .then((res) => res.json())
+      .then(setConfig)
+      .catch(console.error);
+  }, []);
+
+
   const plans = [
     {
       id: "megafon",
       name: "Мегафон",
       label: "Интернет тариф",
       provider: "Мегафон",
-      title: "Интернет-тариф Мегафон",
+      title: "Интернет-тариф",
+      src: megaphone,
       description: "Наш технический специалист установит и настроит оборудование в течение одного часа. Оставьте заявку на выезд мастера и на собственном опите убедитесь во всех этих преимуществах.",
       features: [
         "Размер абонентской платы: 790 Р /месяц",
@@ -24,6 +41,7 @@ export default function Plans() {
       label: "Интернет тариф",
       provider: "Билайн",
       title: "Интернет-тариф Билайн",
+      src: beeline,
       description: "Высокоскоростной интернет от Билайн для дома. Надежное соединение и стабильная скорость для всей семьи.",
       features: [
         "Размер абонентской платы: 890 Р /месяц",
@@ -39,6 +57,7 @@ export default function Plans() {
       label: "Интернет тариф",
       provider: "МТС",
       title: "Интернет-тариф МТС",
+      src: mts,
       description: "Качественный интернет от МТС с гарантированной скоростью и надежной защитой.",
       features: [
         "Размер абонентской платы: 850 Р /месяц",
@@ -54,6 +73,7 @@ export default function Plans() {
       label: "Интернет тариф",
       provider: "Tele2",
       title: "Интернет-тариф Tele2",
+      src: tele2,
       description: "Доступный интернет от Tele2 для всех категорий пользователей.",
       features: [
         "Размер абонентской платы: 650 Р /месяц",
@@ -69,6 +89,7 @@ export default function Plans() {
       label: "Интернет тариф",
       provider: "WiFire",
       title: "Интернет-тариф WiFire",
+      src: wifire,
       description: "Специализированный сервис WiFire для высокоскоростного интернета.",
       features: [
         "Размер абонентской платы: 950 Р /месяц",
@@ -84,6 +105,7 @@ export default function Plans() {
       label: "Интернет тариф",
       provider: "Rostelecom",
       title: "Интернет-тариф Ростелеком",
+      src: ros,
       description: "Универсальное решение от Ростелекома для домашнего интернета.",
       features: [
         "Размер абонентской платы: 799 Р /месяц",
@@ -97,6 +119,10 @@ export default function Plans() {
 
   const [selectedPlan, setSelectedPlan] = useState(plans[0]);
 
+
+
+  if (!config) return null;
+
   return (
     <section className="w-9/10 md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto py-20">
       <div className="w-full max-w-[1200px] mx-auto">
@@ -106,7 +132,7 @@ export default function Plans() {
             Безлимитные тарифы на интернет в частном доме.
           </h2>
           <p className="text-sm md:text-base text-[#454546]">
-            Звоните по номеру <span className="text-[#ff5541] font-bold">+7 (934) 660-57-14</span> и мы подберём выгодный тариф для Вас или используйте готовые стартовые пакеты интернета.
+            Звоните по номеру <span className="text-[#ff5541] font-bold">{config.phone}</span> и мы подберём выгодный тариф для Вас или используйте готовые стартовые пакеты интернета.
           </p>
         </div>
 
@@ -128,10 +154,8 @@ export default function Plans() {
                     }
                   `}
                 >
-                  <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-gradient-to-br from-[#6153fc] to-[#ff5541] rounded-lg mb-2 md:mb-3">
-                    <span className="text-white font-bold text-xs md:text-sm text-center px-1">
-                      {plan.name.substring(0, 3)}
-                    </span>
+                  <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-lg mb-2 md:mb-3">
+                    <img src={plan.src} alt={plan.name} />
                   </div>
                   <h3 className="text-sm md:text-base font-bold text-[#2d3748] text-center">
                     {plan.name}
@@ -148,16 +172,16 @@ export default function Plans() {
           <div className="w-full">
             <div className="bg-white rounded-xl p-4 md:p-6 lg:p-8 h-full" style={{ boxShadow: "0 5px 20px rgba(0,0,0,0.1)" }}>
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-[#2d3748] mb-3">
-                {selectedPlan.title}
+                {plans[0].title}
               </h3>
               <p className="text-sm md:text-base text-[#454546] mb-4 md:mb-6">
-                {selectedPlan.description}
+                {plans[0].description}
               </p>
 
               {/* Features List */}
               <div className="mb-6 md:mb-8">
                 <ul className="space-y-2 md:space-y-3">
-                  {selectedPlan.features.map((feature, index) => (
+                  {plans[0].features.map((feature, index) => (
                     <li key={index} className="text-xs md:text-sm text-[#454546] flex items-start">
                       <span className="text-[#ff5541] font-bold mr-2 flex-shrink-0">•</span>
                       <span>{feature}</span>
