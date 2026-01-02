@@ -1,0 +1,45 @@
+.button {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  padding: 15px 25px;
+  border-radius: 5px;
+
+  background-color: #6153fc;
+  color: white;
+  cursor: pointer;
+
+  /* значения по умолчанию для clip-path */
+  --x: 50%;
+  --y: 50%;
+}
+
+/* слой новой заливки */
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-color: #ff5541;
+
+  clip-path: circle(0% at var(--x) var(--y));
+  transition: clip-path 0.45s ease-in-out;
+}
+
+/* при ховере — заливает всё */
+.button:hover::before {
+  clip-path: circle(150% at var(--x) var(--y));
+}
+
+/* контент поверх заливки */
+.button > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bold {
+  font-weight: bold;
+}
