@@ -11,7 +11,7 @@ import house from "../../../assets/images/home-types/house.png";
 
 export default function Types() {
   return (
-    <section className="w-full mx-auto py-20 md:py-32 lg:py-20">
+    <section className="w-full mx-auto py-20 md:py-32 lg:py-30">
       <div className="w-full md:w-3/4 flex flex-col lg:flex-row items-stretch mx-auto px-4 md:px-6 lg:px-0 gap-8 lg:gap-0">
 
         {/* left side */}
