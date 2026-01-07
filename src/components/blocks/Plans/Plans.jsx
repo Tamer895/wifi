@@ -124,7 +124,7 @@ export default function Plans() {
   if (!config) return null;
 
   return (
-    <section className="w-9/10 md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto py-20">
+    <section id="plans" className="w-9/10 md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto py-20">
       <div className="w-full max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="mb-8 md:mb-12 lg:mb-16">
@@ -155,7 +155,8 @@ export default function Plans() {
                   `}
                 >
                   <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-lg mb-2 md:mb-3">
-                    <img src={plan.src} alt={plan.name} />
+                    <img
+                  lazy="loading" src={plan.src} alt={plan.name} />
                   </div>
                   <h3 className="text-sm md:text-base font-bold text-[#2d3748] text-center">
                     {plan.name}

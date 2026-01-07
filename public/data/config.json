@@ -3,5 +3,13 @@
     "tel": "+79346605714",
 
     "city": "Москва",
-    "city_where": "в Москве"
+    "city_where": "в Москве",
+
+    "inn": "640203194402",
+    "ip": "ИП Быковский Алексей Валерьевич",
+    "address": "Москва, Тверская 14",
+    "email": "web-dacha@mail.ru",
+
+    "token": "2d9cbcd376c43532627d2433dd9dc592df6a47ca68bd564598fae99661629de341ea3d7d317cc842",
+    "api_route": "https://cpa.ruki-iz-plech.ru/api/leads/create"
 }

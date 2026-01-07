@@ -36,17 +36,19 @@ const reviews = [
 
 const TestimonialSlider = () => {
   return (
-    <section className="relative pt-10 lg:py-20 px-4 bg-white overflow-hidden">
+    <section id="reviews" className="relative pt-10 lg:py-20 px-4 bg-white overflow-hidden">
       {/* Декоративные аватары (скрыты на мобильных) */}
       <div className="hidden lg:block absolute left-[10%] top-1/2 -translate-y-1/2 opacity-40">
         <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-lg">
-          <img src={avatar4} alt="" className="w-full h-full object-cover" />
+          <img
+                  lazy="loading" src={avatar4} alt="" className="w-full h-full object-cover" />
         </div>
       </div>
 
       <div className="hidden lg:block absolute right-[10%] top-1/3 opacity-40">
         <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg">
-          <img src={avatar5} alt="" className="w-full h-full object-cover" />
+          <img
+                  lazy="loading" src={avatar5} alt="" className="w-full h-full object-cover" />
         </div>
       </div>
 

@@ -35,32 +35,33 @@ const OurWorks = () => {
         
         {/* Large Image (Top Left) */}
         <div className="md:col-span-2 md:row-span-2 overflow-hidden rounded-xl">
-          <img src={images[0].src} alt={images[0].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          <img
+                  lazy="loading" src={images[0].src} alt={images[0].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
         </div>
 
         {/* Small Image (Top Right 1) */}
         <div className="hidden lg:block overflow-hidden rounded-xl">
-          <img src={images[1].src} alt={images[1].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          <img lazy="loading" src={images[1].src} alt={images[1].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
         </div>
 
         {/* Small Image (Top Right 2) */}
         <div className="hidden lg:block overflow-hidden rounded-xl">
-          <img src={images[2].src} alt={images[2].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          <img lazy="loading" src={images[2].src} alt={images[2].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
         </div>
 
         {/* Large Image (Bottom Right) */}
         <div className="md:col-span-2 md:row-span-2 lg:col-start-2 lg:row-start-3 overflow-hidden rounded-xl">
-          <img src={images[3].src} alt={images[3].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          <img lazy="loading" src={images[3].src} alt={images[3].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
         </div>
 
         {/* Small Image (Bottom Left 1) */}
         <div className="overflow-hidden rounded-xl">
-          <img src={images[4].src} alt={images[4].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          <img lazy="loading" src={images[4].src} alt={images[4].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
         </div>
 
         {/* Small Image (Bottom Left 2) */}
         <div className="overflow-hidden rounded-xl">
-          <img src={images[5].src} alt={images[5].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          <img lazy="loading" src={images[5].src} alt={images[5].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
         </div>
 
       </div>

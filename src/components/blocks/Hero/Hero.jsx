@@ -16,7 +16,7 @@ export default function Hero() {
   }, []);
 
   const links = [
-    { title: "Главная", href: "" },
+    { title: "Главная", href: "#home" },
     { title: "О нас", href: "#about" },
     { title: "Тарифы", href: "#plans" },
     { title: "Работы", href: "#works" },
@@ -27,14 +27,16 @@ export default function Hero() {
   if (!config) return null;
 
   return (
-    <section className="w-full hero-section min-h-[90vh] flex flex-col">
+    <section id="home" className="w-full hero-section min-h-[90vh] flex flex-col">
       <div className="w-[90%] max-w-[1200px] mx-auto flex flex-col">
 
         {/* Header */}
         <div className="w-full flex items-center justify-between py-6 relative">
+          <a href="/">
           <h1 className="text-3xl sm:text-4xl text-[#6153fc] font-bold">
-            WiFi<span className="text-[#ff5541]">INK</span>.
+            Nova<span className="text-[#ff5541]">Link</span>.
           </h1>
+          </a>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center font-semibold">

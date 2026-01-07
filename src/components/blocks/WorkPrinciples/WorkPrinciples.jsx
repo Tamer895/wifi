@@ -3,7 +3,7 @@ import { Antenna, Usb, Wifi } from 'lucide-react'; // Example icons
 
 const WorkPrinciples = () => {
   return (
-    <section className="bg-[#f8f9ff] py-16">
+    <section id="works" className="bg-[#f8f9ff] py-16">
       <div className="w-9/10 md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

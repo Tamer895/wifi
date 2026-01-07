@@ -17,10 +17,11 @@ export default function Button({ children, bold, ...props }) {
     <button
       {...props}
       onMouseEnter={handleMouseEnter}
+      id="open-fullscreen-form"
       className={`${classes.button} shadow-lg ${bold ? classes.bold : ""}`}
     >
-      <User size={22} />
-      <span className="ml-1">{children}</span>
+      <User id="open-fullscreen-form" size={22} />
+      <span id="open-fullscreen-form" className="ml-1">{children}</span>
     </button>
   )
 }

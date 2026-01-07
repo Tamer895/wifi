@@ -2,10 +2,47 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, User } from 'lucide-react';
 
 const Contacts = () => {
-  const [formData, setFormData] = useState({ name: '', phone: '' });
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
 
   const [config, setConfig] = useState(null);
-  
+
+  useEffect(() => {
+    fetch("/data/config.json")
+      .then((res) => res.json())
+      .then(setConfig)
+      .catch(console.error);
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const clientToken = config.token;
+
+    try {
+      const response = await fetch(config.api_route, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          auth: clientToken,
+        },
+        body: JSON.stringify({
+          phone,
+          message,
+          source: "Wifi",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Ошибка отправки");
+      }
+
+      alert("Данные успешно отправлены. Спасибо за обращение!");
+    } catch (error) {
+      console.error("Ошибка:", error);
+      alert("Не удалось отправить заявку. Попробуйте позже.");
+    }
+  };
     useEffect(() => {
       fetch("/data/config.json")
         .then((res) => res.json())
@@ -13,17 +50,12 @@ const Contacts = () => {
         .catch(console.error);
     }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Данные формы:', formData);
-    // Здесь логика отправки данных
-  };
 
 
   if (!config) return null;
 
   return (
-    <section className="bg-white w-9/10 md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto">
+    <section id="contacts" className="bg-white w-9/10 md:w-3/4 xl:w-4/5 2xl:w-3/4 mx-auto">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20">
         
         {/* Левая часть: Форма */}
@@ -35,21 +67,20 @@ const Contacts = () => {
           <p className="text-gray-500 text-lg mb-10 max-w-md">
             Оставьте ваши контакты и наш консультант свяжется с Вами
           </p>
-
           <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
             <input
               type="text"
               placeholder="Ваше Имя"
               className="w-full p-5 bg-[#f0f2f9] rounded-xl outline-none focus:ring-2 focus:ring-[#6c5ce7] transition-all text-gray-700 placeholder:text-gray-400"
-              value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
             <input
               type="tel"
               placeholder="Введите номер телефона"
               className="w-full p-5 bg-[#f0f2f9] rounded-xl outline-none focus:ring-2 focus:ring-[#6c5ce7] transition-all text-gray-700 placeholder:text-gray-400"
-              value={formData.phone}
-              onChange={(e) => setFormData({...formData, phone: e.target.value})}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
             
             <p className="text-sm text-gray-500 py-4">
@@ -74,24 +105,27 @@ const Contacts = () => {
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-[#6c5ce7]">
                 <MapPin className="w-6 h-6" />
               </div>
-              <span className="text-lg text-gray-700 font-medium">Москва, Тверская 14</span>
+              <span className="text-lg text-gray-700 font-medium">{config.address}</span>
             </div>
 
             {/* Телефон */}
-            <div className="flex items-center gap-5">
+
+
+
+            <a href={`tel:${config.phone}`} className="flex items-center gap-5">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-[#6c5ce7]">
                 <Phone className="w-6 h-6" />
               </div>
               <span className="text-lg text-gray-700 font-medium">{config.phone}</span>
-            </div>
+            </a>
 
             {/* Email */}
-            <div className="flex items-center gap-5">
+            <a href={`mailto:${config.email}`} className="flex items-center gap-5">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-[#6c5ce7]">
                 <Mail className="w-6 h-6" />
               </div>
-              <span className="text-lg text-gray-700 font-medium">web-dacha@mail.ru</span>
-            </div>
+              <span className="text-lg text-gray-700 font-medium">{config.email}</span>
+            </a>
           </div>
         </div>
 

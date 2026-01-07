@@ -31,6 +31,7 @@ const InternetInstallation = () => {
           <div className="relative bg-white rounded-3xl p-8 shadow-sm w-full max-w-md lg:max-w-xl">
              {/* Replace with your actual SVG or Image path */}
             <img 
+                  lazy="loading"
               src={img}
               alt="Installation Illustration" 
               className="w-full h-auto rounded-3xl"

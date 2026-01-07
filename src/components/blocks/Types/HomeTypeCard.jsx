@@ -23,6 +23,7 @@ export default function HomeTypeCard({ image, title, description }) {
       }
     >
       <img
+                  lazy="loading"
         width={50}
         className="
           w-12 md:w-14 lg:w-[70px]

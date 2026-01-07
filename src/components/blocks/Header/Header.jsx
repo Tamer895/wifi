@@ -25,7 +25,7 @@ export default function Header() {
   }, [visible]);
 
   const links = [
-    { title: "Главная", href: "" },
+    { title: "Главная", href: "#home" },
     { title: "О нас", href: "#about" },
     { title: "Тарифы", href: "#plans" },
     { title: "Работы", href: "#works" },
@@ -42,9 +42,11 @@ export default function Header() {
       className="fixed top-0 left-0 w-full bg-white shadow-md z-50"
     >
       <div className="w-[90%] max-w-[1200px] mx-auto flex items-center justify-between py-4">
+        <a href="/">
         <h1 className="text-3xl sm:text-4xl text-[#6153fc] font-bold">
-          WiFi<span className="text-[#ff5541]">INK</span>.
+          Nova<span className="text-[#ff5541]">Link</span>.
         </h1>
+        </a>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center font-semibold">

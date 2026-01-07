@@ -58,6 +58,7 @@ export default function Brands() {
               {images.map((image, index) => (
                 <div key={index} className="flex justify-center px-2 py-4">
                   <img
+                  lazy="loading"
                     className="h-10 object-contain"
                     src={image.src}
                     alt={image.alt}
@@ -71,6 +72,7 @@ export default function Brands() {
           <div className="hidden sm:flex flex-row items-center justify-center gap-6 sm:gap-8 flex-wrap">
             {images.map((image, index) => (
               <img
+                  lazy="loading"
                 className="h-10 sm:h-12 md:h-14 lg:h-12 lg:mx-3 object-contain"
                 key={index}
                 src={image.src}
